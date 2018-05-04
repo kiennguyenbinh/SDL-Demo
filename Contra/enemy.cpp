@@ -38,3 +38,6 @@ void enemy::Draw()
 	SDL_SetRenderDrawColor(Graphics::getInstance()->GetRender(), 255, 0, 255, 255);
 	SDL_RenderFillRect(Graphics::getInstance()->GetRender(), &m_enemy);
 }
+void enemy::execute() {
+
+}

@@ -6,7 +6,7 @@
 class StateManager
 {
 private:
-	std::deque<StateBase* > m_stackstate;
+	std::deque<StateBase*> m_stackstate;
 public:
 	StateManager();
 	~StateManager();

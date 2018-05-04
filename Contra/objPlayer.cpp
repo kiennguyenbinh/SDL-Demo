@@ -23,6 +23,9 @@ void objPlayer::Draw() {
 	SDL_SetRenderDrawColor(Graphics::getInstance()->GetRender(), 255, 0, 0, 255);
 	SDL_RenderFillRect(Graphics::getInstance()->GetRender(), &m_main);
 }
+void objPlayer::execute() {
+
+}
 void objPlayer::setPosition(int x, int y) {
 	m_position.x = x;
 	m_position.y = y;
