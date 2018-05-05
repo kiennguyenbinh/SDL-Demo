@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{5ba5de27-d7e6-4368-82f5-a71bec4d79dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Modules">
+      <UniqueIdentifier>{9fa31a21-13f7-43a9-9bc7-c453a4eb55a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules">
+      <UniqueIdentifier>{327cbf61-de9c-4e0c-a144-64ef539eb2f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="StateManager.cpp">
       <Filter>Source Files\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Source Files\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="StateManager.h">
       <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
