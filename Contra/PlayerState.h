@@ -1,5 +1,6 @@
 #pragma once
 #include "StateBase.h"
+#include "EventManager.h"
 #include "objPlayer.h"
 #include "enemy.h"
 #include <vector>
@@ -7,7 +8,7 @@
 
 
 class PlayerState :
-	public StateBase
+	public StateBase, Listener
 {
 private:
 	SDL_Event m_event;
@@ -23,7 +24,7 @@ public:
 	bool Suppend();
 	bool Resume();
 	bool Destroy();
-	void OnEvent(SDL_KeyboardEvent &env);
+	void OnEvent(CoreEvent &env);
 	void SetMoveEventState(int state) { _event_state = state; };
 };
 

@@ -13,6 +13,7 @@ private:
 public:
 	EventManager();
 	~EventManager();
+	static EventManager* getInstance();
 	void Update();
 	void RaiseEvent(CoreEvent& _event);
 	void PostEvent(CoreEvent& _event, EventPriority _priority);

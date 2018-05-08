@@ -38,3 +38,12 @@ void EventManager::Update() {
 void EventManager::PostEvent(CoreEvent& _event,EventPriority _priority) {
 	m_event.insert(std::pair<EventPriority, CoreEvent>(_priority, _event));
 }
+
+EventManager* EventManager::getInstance() {
+	static EventManager* instance = nullptr;
+	if (instance) {
+		return instance;
+	}
+	instance = new EventManager();
+	return instance;
+}

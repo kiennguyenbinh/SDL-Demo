@@ -15,6 +15,8 @@ PlayerState::~PlayerState() {
 }
 bool PlayerState::Init() {
 
+	EventManager::getInstance()->AddListener(this);
+
 	main_mc = new objPlayer();
 	main_mc->Init(Pos(20, 20, 20, 20));
 	int rand_enemy = rand() % MAX_ENEMY + 1 ;
@@ -43,17 +45,6 @@ bool PlayerState::Update() {
 	else if (_event_state == EVENT_MOVE_RIGHT) {
 		main_mc->setPosition(main_mc->getPostion().x + STEP_MOVE, main_mc->getPostion().y);
 	}
-	while (SDL_PollEvent(&m_event)) {
-		switch (m_event.type)
-		{
-			case SDL_KEYDOWN:
-			case SDL_KEYUP:
-				OnEvent(m_event.key);
-				break;
-		}
-			
-				
-	}
 	return true;
 }
 bool PlayerState::Draw() {
@@ -65,33 +56,9 @@ bool PlayerState::Draw() {
 	}
 	return true;
 }
-void PlayerState::OnEvent(SDL_KeyboardEvent &event) {
-	//SDL_Log("Event type :: %d", event.keysym.sym);
-	switch (event.type)
-	{
-	case SDL_KEYDOWN:
-		switch (event.keysym.sym) {
-		case SDLK_w:
-			SetMoveEventState(EVENT_MOVE_UP);
-			break;
-		case SDLK_s:
-			SetMoveEventState(EVENT_MOVE_DOWN);
-			break;
-		case SDLK_a:
-			SetMoveEventState(EVENT_MOVE_LEFT);
-			break;
-		case SDLK_d:
-			SetMoveEventState(EVENT_MOVE_RIGHT);
-			break;
-		default:
-			SetMoveEventState(EVENT_MOVE_NONE);
-			break;
-		}
-		break;
-	case SDL_KEYUP:
-		SetMoveEventState(EVENT_MOVE_NONE);
-		break;
-	}
+void PlayerState::OnEvent(CoreEvent &env) {
+
+
 	
 }
 bool PlayerState::Suppend() {
