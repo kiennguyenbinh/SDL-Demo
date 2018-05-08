@@ -19,6 +19,5 @@ public:
 	void PostEvent(CoreEvent& _event, EventPriority _priority);
 	void AddListener(Listener* _listen);
 
-	
 };
 

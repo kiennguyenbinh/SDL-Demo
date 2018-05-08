@@ -3,8 +3,6 @@
 
 
 EventManager::EventManager()
-	: m_event(0, 0),
-	m_listener(0)
 {
 }
 
@@ -27,7 +25,6 @@ void EventManager::RaiseEvent(CoreEvent& _event) {
 }
 
 void EventManager::Update() {
-	std::sort(m_event.begin(), m_event.end());
 	for each (auto it in m_event)
 	{
 		RaiseEvent(it.second);
@@ -36,7 +33,7 @@ void EventManager::Update() {
 }
 
 void EventManager::PostEvent(CoreEvent& _event,EventPriority _priority) {
-	m_event.insert(std::pair<EventPriority, CoreEvent>(_priority, _event));
+	m_event.insert(std::make_pair(_priority, _event));
 }
 
 EventManager* EventManager::getInstance() {

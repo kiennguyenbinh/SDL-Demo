@@ -148,8 +148,11 @@
     <ClCompile Include="Command.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="CoreEvent.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Listener.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="objPlayer.cpp" />
     <ClCompile Include="PlayerState.cpp" />
@@ -163,9 +166,12 @@
     <ClInclude Include="Command.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="CoreEvent.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="EventManager.h" />
     <ClInclude Include="GameCustom.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Listener.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="objPlayer.h" />
     <ClInclude Include="PlayerState.h" />

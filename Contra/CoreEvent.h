@@ -1,15 +1,14 @@
 #pragma once
 enum EventState
 {
-	NONE = 0,
-	QUEUE,
-	CANCEL
+	STATE_NONE = 0,
+	STATE_QUEUE,
+	STATE_CANCEL
 };
 enum EventFlag
 {
-	NONE = 0,
-	NORMAL,
-
+	FLAG_NONE = 0,
+	FLAG_NORMAL
 };
 enum EventType
 {
@@ -20,10 +19,10 @@ enum EventType
 };
 enum EventPriority
 {
-	LOW = 0,
-	NORMAL,
-	HIGH,
-	URGENT
+	EVENT_LOW = 0,
+	EVENT_NORMAL,
+	EVENT_HIGH,
+	EVENT_URGENT
 };
 class CoreEvent
 {

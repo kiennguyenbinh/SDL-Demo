@@ -1,8 +1,14 @@
 #include "StateManager.h"
 #include "PlayerState.h"
 #include "Timer.h"
+#include "EventManager.h"
 
 bool isExit = false;
+
+int workerEventManager(void *ptr) {
+	static_cast<EventManager*>(ptr)->Update();
+	return 0;
+}
 int main()
 {
 	//setting windows
@@ -26,7 +32,7 @@ int main()
 	StateManager::getInstance()->SwitchState(new PlayerState());
 	//Init FPS
 	Timer fps;
-
+	SDL_Thread* event_thread = SDL_CreateThread(workerEventManager,"", EventManager::getInstance());
 	if (Graphics::getInstance()->Init(cs))
 	{
 		//MainLoop

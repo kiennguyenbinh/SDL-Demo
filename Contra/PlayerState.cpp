@@ -33,7 +33,7 @@ bool PlayerState::Update() {
 	{
 		it->Update();
 	}
-	if (_event_state == EVENT_MOVE_UP) {
+	/*if (_event_state == EVENT_MOVE_UP) {
 		main_mc->setPosition(main_mc->getPostion().x, main_mc->getPostion().y - STEP_MOVE);
 	}
 	else if (_event_state == EVENT_MOVE_DOWN) {
@@ -44,7 +44,7 @@ bool PlayerState::Update() {
 	}
 	else if (_event_state == EVENT_MOVE_RIGHT) {
 		main_mc->setPosition(main_mc->getPostion().x + STEP_MOVE, main_mc->getPostion().y);
-	}
+	}*/
 	return true;
 }
 bool PlayerState::Draw() {
