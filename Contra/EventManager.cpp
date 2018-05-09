@@ -27,13 +27,13 @@ void EventManager::RaiseEvent(CoreEvent& _event) {
 void EventManager::Update() {
 	for each (auto it in m_event)
 	{
-		RaiseEvent(it.second);
-		m_event.erase(it.first);
+		RaiseEvent(it);
+		
 	}
 }
 
 void EventManager::PostEvent(CoreEvent& _event,EventPriority _priority) {
-	m_event.insert(std::make_pair(_priority, _event));
+	m_event.push_back(_event);
 }
 
 EventManager* EventManager::getInstance() {

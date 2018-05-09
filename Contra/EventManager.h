@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreEvent.h"
 #include "Listener.h"
-#include <map>
+#include <deque>
 #include <iostream>
 #include <string>
 #include <vector>
 class EventManager
 {
 private:
-	std::map<EventPriority, CoreEvent> m_event;
+	std::deque<CoreEvent> m_event;
 	std::vector<Listener*> m_listener;
 public:
 	EventManager();
